@@ -54,6 +54,8 @@ node /tmp/hallmark/skills/hallmark/scripts/sloplint.mjs index.html --genre playf
 ```
 Hallmark's `--render` needs `puppeteer-core` (set `HALLMARK_PUPPETEER` to its path) and `CHROME_PATH`. Its `--kept` check compares against `.hallmark/before.json`, which is git-ignored and was not pushed; skip `--kept` in a fresh clone.
 
+**Real-Chrome pass (2026-11-22, Claude in Chrome + device emulation):** full path walked, all 32 dialogues opened, every link checked (all load in a real browser; Pedigree, Meta Ad Library and LinkedIn block curl but work). Fixed: Back from the work list left the site (now `pushState`, so Back closes the list); mashing E to skip the typewriter could open the first link (a 350 ms guard); the End room lists contact before replay options; the crawl column is 52rem so justified lines have smaller gaps; the "Where it ran" links are 44px tall on touch; the portrait canvas is centred above the pad. Second pass: portrait phones now get a zoomed camera (`CAM` in `fit`/`render`, about 176×176 of the room at twice the size, following the player; landscape and desktop are unchanged), a compact character panel so Select fits on an iPhone SE, the landscape P1 badge no longer touches the heading, and the toast sits along the bottom of the zoomed view. Impeccable newly flags `wide-tracking` on the crawl title, a short uppercase heading, so it is waived on that element. Both linters match the baseline.
+
 ## What to do next (priority order)
 
 1. **Test in real Chrome with Claude in Chrome:** the full path on the live URL. Check: sound starts on Press start, the crawl looks right at your actual screen size, the clock wipe, select by mouse and keyboard, walking all 7 rooms, every dialogue, and that links open (Instagram may show a login wall when logged out). Also check that the email button opens the mail app, the `#work` deep link and the Back button behaviour, and Chrome DevTools device mode for phones. Note anything that feels slow, confusing or broken.
@@ -67,7 +69,6 @@ Hallmark's `--render` needs `puppeteer-core` (set `HALLMARK_PUPPETEER` to its pa
    - confirmation of the title "copywriter" on the gate, and his approval of the character taglines and welcome copy, which were written for him.
 3. **Known gaps from the critique, not fixed yet:**
    - Rooms are sparse; dress each from its work (a ticker wall in JM, a marquee in Vitrina, ad screens in Advertising) and scale the Launches items up, since the phone is about 4px.
-   - The portrait phone canvas is small (about 366×201); consider a 2× camera that follows the player in portrait. A "turn your phone sideways" toast exists today.
    - Link-preview image: `og.png` was built but not shipped (git-ignored), because the GitHub connector in the old session could not push binaries. Generate a 1200×630 image, commit it, add `og:image` with the **absolute** URL `https://kaalpanikh.github.io/hamza-tinwala-portfolio/og.png`, set `twitter:card` to `summary_large_image`, and add `og.png` to the workflow's copy list.
    - The crawl copy leans on a few clichés; only change it with Hamza's approval, because it's his text.
 
