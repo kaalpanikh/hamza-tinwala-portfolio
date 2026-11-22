@@ -9,10 +9,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Portfolio Episode XIII: The Rise of Creativity">
 <meta property="og:description" content="The playable portfolio of Hamza Tinwala. Pick a character, explore seven rooms of work.">
-<meta property="og:image" content="og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'%3E%3Crect width='16' height='16' fill='%2306050c'/%3E%3Crect x='6' y='2' width='4' height='4' fill='%23f3eee2'/%3E%3Crect x='7' y='6' width='2' height='5' fill='%23f3eee2'/%3E%3Crect x='4' y='7' width='8' height='2' fill='%23ffd84a'/%3E%3Crect x='5' y='11' width='2' height='3' fill='%23f3eee2'/%3E%3Crect x='9' y='11' width='2' height='3' fill='%23f3eee2'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,10 +18,10 @@
 <style>
 /* Hallmark · redesign: polish · built: the project · genre: playful · theme: brand (the client's crawl gold, arcade red, per-room palettes) · signature: the playable dungeon of campaign rooms */
 /* critique: the brief pins a film-crawl intro and a retro arcade game; polish keeps that world and fixes legibility, contrast, tokens, states, motion fallbacks and the recruiter path */
-/* Hallmark · waive 67 · the PORTFOLIO lockup, Episode XIII and the pixel arcade UI · the brief pins a film-crawl logo and an arcade interface; the reading surface (quick index) is sentence case in the body face */
-/* Hallmark · waive 54 · "Episode XIII" above the crawl title · the brief's own opening line, quoted verbatim */
 /* Hallmark · waive 37 · Barlow and Barlow Condensed · one superfamily: the condensed cut is the crawl and display voice, the regular cut is the reading face of the quick index */
 /* Hallmark · answered: hard pixel drop shadows (start and select buttons, panel) are the arcade material the brief chose */
+/* Hallmark · reworded "Episode XIII" + "THE RISE OF CREATIVITY" to one heading with Episode XIII as its first line · gate 54 */
+/* Hallmark · answered F22: the crawl is justified like the film it quotes; hyphenation is off on purpose so no word breaks mid-line */
 /* Hallmark · answered F4: "Sound on" is an outlined utility toggle in the footer bar, not a second primary */
 /* Hallmark · dropped "${esc(o.links[0].url)}" · a linter read of a JS template string, the totem links are still rendered by buildIndex */
 /* Hallmark · reworded "PORTFOLIO" + "HAMZA TINWALA · COPY & CREATIVE" to the lockup "PORTFOLIO / Episode XIII" + one sentence naming Hamza · gates 54 and 63 */
@@ -70,7 +67,7 @@ h1,h2{text-wrap:balance;overflow-wrap:break-word}
 #intro{z-index:30}
 #gate{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:var(--s8);text-align:center;padding:var(--s6);transition:opacity .8s var(--ease-out)}
 .gate-title{margin:0;font-family:var(--crawl);font-weight:700;line-height:.85;display:flex;flex-direction:column;align-items:center;gap:var(--s4)}
-.gate-title .word{color:transparent;-webkit-text-stroke:2px var(--gold);font-size:clamp(56px,12vw,150px);letter-spacing:.06em}
+.gate-title .word{color:transparent;-webkit-text-stroke:2px var(--gold);font-size:clamp(56px,12vw,150px);letter-spacing:0}
 .gate-title .ep{color:var(--gold);font-weight:600;font-size:clamp(18px,2.2vw,24px);letter-spacing:.3em;padding-left:.3em}
 .gate-line{margin:0;font-family:var(--crawl);font-weight:400;font-size:clamp(20px,2.4vw,26px);color:var(--ink-2)}
 .start-btn{background:var(--p1);border:0;font-size:14px;cursor:pointer;padding:var(--s4) var(--s6);color:var(--ink);min-height:52px;box-shadow:0 6px 0 var(--p1-shade);display:inline-flex;align-items:center;gap:var(--s3)}
@@ -80,24 +77,24 @@ h1,h2{text-wrap:balance;overflow-wrap:break-word}
 .text-link{font-family:var(--read);font-size:17px;color:var(--ink-3);background:none;border:0;cursor:pointer;text-decoration:underline;text-decoration-color:var(--line-hi);text-underline-offset:5px;padding:var(--s3);min-height:44px;white-space:nowrap}
 .text-link:hover{color:var(--ink);text-decoration-color:var(--gold)}
 #preline{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;font-family:var(--crawl);color:var(--cyan);font-size:clamp(22px,3vw,34px);text-align:center;transition:opacity 1.4s;padding:0 12vw;font-weight:400;line-height:1.35;pointer-events:none}
-#logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(2.4);font-family:var(--crawl);font-weight:700;font-size:clamp(56px,11vw,150px);color:transparent;-webkit-text-stroke:3px var(--gold);letter-spacing:.08em;line-height:.85;text-align:center;white-space:nowrap;pointer-events:none}
+#logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%) scale(2.4);font-family:var(--crawl);font-weight:700;font-size:clamp(56px,11vw,150px);color:transparent;-webkit-text-stroke:3px var(--gold);letter-spacing:0;line-height:.85;text-align:center;white-space:nowrap;pointer-events:none}
 .js #logo{opacity:0}
-#logo small{display:block;font-size:.3em;letter-spacing:.3em;-webkit-text-stroke:0;color:var(--gold);margin-top:.3em}
-#logo.go{animation:logo 6.5s cubic-bezier(.2,0,.5,1) forwards}
+#logo small{display:block;font-size:.3em;letter-spacing:0;-webkit-text-stroke:0;color:var(--gold);margin-top:.3em}
+#logo.go{animation:logo 4.5s cubic-bezier(.2,0,.5,1) forwards}
 @keyframes logo{0%{opacity:1;transform:translate(-50%,-50%) scale(2.4)}88%{opacity:1}100%{opacity:0;transform:translate(-50%,-50%) scale(.02)}}
 #crawl-view{position:absolute;inset:0;perspective:340px;perspective-origin:50% 30%;overflow:hidden;-webkit-mask-image:linear-gradient(to bottom,transparent 8%,var(--void) 42%);mask-image:linear-gradient(to bottom,transparent 8%,var(--void) 42%);pointer-events:none}
 #crawl-plane{position:absolute;left:50%;bottom:-2vh;width:min(44rem,86vw);height:300vh;transform:translateX(-50%) rotateX(32deg);transform-origin:50% 100%}
-#crawl-text{position:absolute;left:0;right:0;top:0;color:var(--gold);font-family:var(--crawl);font-weight:600;font-size:clamp(26px,3.7vw,50px);line-height:1.32;text-align:justify;hyphens:auto;transform:translateY(400vh)}
+#crawl-text{position:absolute;left:0;right:0;top:0;color:var(--gold);font-family:var(--crawl);font-weight:600;font-size:clamp(26px,3.7vw,50px);line-height:1.32;text-align:justify;hyphens:manual;text-wrap:pretty;transform:translateY(400vh)}
 #crawl-text.running{will-change:transform}
 #crawl-text p{margin:0 0 1.1em}
-#crawl-text .ep{text-align:center;margin-bottom:.15em;letter-spacing:.06em}
+#crawl-text .ep{display:block;font-size:.625em;font-weight:600;margin-bottom:.4em;letter-spacing:0}
 #crawl-text h2{text-align:center;font-size:1.6em;margin:0 0 1em;letter-spacing:.08em;line-height:1.05;font-weight:700}
 #crawl-text .center{text-align:center}
 /* reduced motion: the crawl is set flat and still */
 #intro.still #crawl-view{perspective:none;-webkit-mask-image:none;mask-image:none;display:flex;align-items:center;justify-content:center;overflow:auto;pointer-events:auto}
 #intro.still #crawl-plane{position:static;transform:none;height:auto;width:min(40rem,88vw)}
 #intro.still #crawl-text{position:static;transform:none;font-size:clamp(20px,2.6vw,30px)}
-.intro-bar{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:center;gap:var(--s3);padding:var(--s4) max(var(--s4),2vw) max(var(--s4),env(safe-area-inset-bottom))}
+.intro-bar{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(to top,var(--void) 40%,transparent);display:flex;justify-content:space-between;align-items:center;gap:var(--s3);padding:var(--s4) max(var(--s4),2vw) max(var(--s4),env(safe-area-inset-bottom))}
 .ghost-btn{font-family:var(--ui);font-size:11px;background:var(--scrim-soft);border:1px solid var(--line-2);color:var(--ink-2);padding:var(--s3) var(--s4);cursor:pointer;min-height:44px;display:inline-flex;align-items:center;gap:var(--s2)}
 .ghost-btn:hover{color:var(--ink);border-color:var(--line-hi)}
 .ghost-btn:active{transform:translateY(1px)}
@@ -150,14 +147,14 @@ h1,h2{text-wrap:balance;overflow-wrap:break-word}
 #room-label{text-align:center;line-height:1.4}
 #room-label .rn{display:block;white-space:nowrap;font-family:var(--body);font-size:20px;color:var(--ink-3)}
 #room-label .rt{display:block;font-size:clamp(11px,1.1vw,13px);color:var(--gold)}
-#minimap{width:72px;height:48px;image-rendering:pixelated}
+#minimap{width:72px;height:48px;image-rendering:pixelated;cursor:pointer}
 .hud-btn{background:var(--control);border:2px solid var(--line-2);font-size:11px;padding:var(--s2) var(--s3);cursor:pointer;min-height:44px;color:var(--ink-2);display:inline-flex;align-items:center;gap:var(--s2);white-space:nowrap}
 .hud-btn:hover{border-color:var(--line-hi);color:var(--ink)}
 .hud-btn:active{transform:translateY(1px)}
 .hud-btn[aria-pressed=false]{color:var(--ink-4)}
 #stage{position:relative;flex:1;width:100%;display:flex;align-items:center;justify-content:center;padding:var(--s2)}
 #screen{position:relative}
-#cv{display:block;image-rendering:pixelated;image-rendering:crisp-edges;width:100%;height:100%;cursor:default;box-shadow:0 0 0 4px var(--line),0 0 0 8px var(--panel),0 20px 60px var(--void)}
+#cv{outline:none;display:block;image-rendering:pixelated;image-rendering:crisp-edges;width:100%;height:100%;cursor:default;box-shadow:0 0 0 4px var(--line),0 0 0 8px var(--panel),0 20px 60px var(--void)}
 #banner{position:absolute;left:50%;top:10%;transform:translate(-50%,-20px);background:var(--scrim);border:3px solid var(--gold);padding:var(--s3) var(--s5);text-align:center;transition:opacity .35s var(--ease-out),transform .35s var(--ease-out);pointer-events:none;white-space:nowrap;max-width:94%}
 .js #banner{opacity:0}
 .js #banner.on{opacity:1;transform:translate(-50%,0)}
@@ -212,6 +209,9 @@ h1,h2{text-wrap:balance;overflow-wrap:break-word}
 .ix-links a .ico{color:var(--ink-4)}
 .ix-links a:hover,.ix-links a:focus-visible{border-color:var(--gold)}
 .ix-links a:hover .ico{color:var(--gold)}
+.ix-where{font-size:15px!important;color:var(--ink-4)!important;margin-top:var(--s4)!important}
+.ix-where a{color:var(--ink-3);text-underline-offset:3px}
+.ix-where a:hover{color:var(--gold)}
 .ix-group{font-size:15px;color:var(--ink-4);margin:var(--s4) 0 var(--s2);font-weight:600}
 .ix-close{font-family:var(--read);font-size:16px;font-weight:600;background:var(--control);border:2px solid var(--line-2);color:var(--ink);padding:var(--s2) var(--s4);min-height:44px;cursor:pointer;display:inline-flex;align-items:center;gap:var(--s2)}
 .ix-close:hover{border-color:var(--gold)}
@@ -245,6 +245,12 @@ h1,h2{text-wrap:balance;overflow-wrap:break-word}
 }
 @media (max-width:760px) and (pointer:coarse){
   #dlg{position:fixed;left:var(--s2);right:var(--s2);bottom:max(var(--s2),env(safe-area-inset-bottom));max-height:60vh;z-index:16}
+}
+@media (pointer:coarse){
+  #dlg.many{position:fixed;inset:max(var(--s2),env(safe-area-inset-top)) var(--s2) max(var(--s2),env(safe-area-inset-bottom));max-height:none;overflow:auto;z-index:16}
+  #dlg.many #dlg-text,#dlg.many #dlg-links{overflow:visible}
+  #dlg.many>*{flex:none}
+  #dlg.many .dlg-foot{position:sticky;bottom:calc(-1 * var(--s3));background:var(--panel);padding-block:var(--s2)}
 }
 @media (orientation:landscape) and (pointer:coarse) and (max-height:500px){
   .sel-wrap{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);align-items:center;padding-block:var(--s3)}
@@ -288,17 +294,16 @@ h1,h2{text-wrap:balance;overflow-wrap:break-word}
 <section id="intro" class="layer" aria-label="Intro">
   <div id="gate">
     <h1 class="gate-title"><span class="word">PORTFOLIO</span><span class="ep">Episode XIII</span></h1>
-    <p class="gate-line">A playable portfolio by Hamza Tinwala.</p>
+    <p class="gate-line">A playable portfolio by Hamza Tinwala, copywriter.</p>
     <button class="start-btn" id="start"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg>Press start</button>
     <a class="text-link" id="gate-index" href="#work">Just show me the work</a>
   </div>
   <div id="preline" aria-hidden="true">Not so long ago, in an agency<br>not very far away…</div>
-  <div id="logo" aria-hidden="true">PORTFOLIO<small>EPISODE XIII</small></div>
+  <div id="logo" aria-hidden="true">PORTFOLIO<small>Episode XIII</small></div>
   <div id="crawl-view">
     <div id="crawl-plane">
       <div id="crawl-text">
-        <p class="ep">Episode XIII</p>
-        <h2>THE RISE OF<br>CREATIVITY</h2>
+        <h2><span class="ep">Episode XIII</span>THE RISE OF<br>CREATIVITY</h2>
         <p>It is a time of chaos. Across agencies and brands, countless ideas battle for attention. Campaigns rise. Campaigns fall. Ideas are accepted and rejected. As deadlines draw near, a powerful force remains undefeated: A GOOD IDEA!</p>
         <p>For years, Hamza Tinwala has travelled the creative galaxy, wielding words, concepts and an unhealthy curiosity to turn ordinary briefs into extraordinary stories. From campaigns to concepts, scripts to strategies, no brief is too small and no idea too big.</p>
         <p>His mission is simple: MAKE SOMETHING WORTH REMEMBERING.</p>
@@ -343,14 +348,14 @@ h1,h2{text-wrap:balance;overflow-wrap:break-word}
     </div>
     <div id="room-label" aria-live="polite"></div>
     <div class="hud-r">
-      <canvas id="minimap" width="33" height="22" role="img" aria-label="Map of explored rooms"></canvas>
+      <canvas id="minimap" width="33" height="22" role="img" aria-label="Map of explored rooms" title="Map: click a room you have found to travel there"></canvas>
       <button class="hud-btn" id="btn-sound" aria-pressed="true" aria-label="Sound"><svg class="ico" aria-hidden="true"><use href="#i-snd"/></svg><span class="lbl">Sound</span></button>
       <button class="hud-btn" id="btn-index"><svg class="ico" aria-hidden="true"><use href="#i-list"/></svg><span class="lbl">All work</span></button>
     </div>
   </header>
   <div id="stage">
     <div id="screen">
-      <canvas id="cv" width="320" height="176" role="img" aria-label="Pixel dungeon. Use the arrow keys to walk and E to open the work; the All work button lists everything."></canvas>
+      <canvas id="cv" width="320" height="176" tabindex="-1" role="img" aria-label="Pixel dungeon. Use the arrow keys to walk and E to open the work; the All work button lists everything."></canvas>
       <div id="banner" aria-hidden="true"><div class="n"></div><div class="t"></div></div>
       <div id="toast" role="status"></div>
       <div id="dlg" class="hidden" role="dialog" aria-labelledby="dlg-title" tabindex="-1">
@@ -375,7 +380,7 @@ h1,h2{text-wrap:balance;overflow-wrap:break-word}
     </div>
     <p class="ix-lede"><strong>4+ years of experience</strong> writing for <strong>25+ national and international brands</strong> across <strong>5+ industries</strong>, specialized in <strong>BFSI writing</strong>. Every piece of work from the game, in one list.</p>
     <div class="ix-contact" id="ix-contact"></div>
-    <div id="ix-rooms"></div>
+    <div id="ix-rooms"><section class="ix-room" aria-labelledby="ix-r2"><h2 id="ix-r2"><small>Room 2: Social media for BFSI</small>JM Financial Services</h2><div><p><strong>The brief:</strong> To advertise JM Financial Services’ diverse range of products and gain an audience for them on Instagram. I also spearheaded the campaign for the launch of their new app, BlinkTrade Pro, across their social channels.</p><div class="ix-group">The work</div><div class="ix-links"><a href="https://www.instagram.com/reel/CsjDblKJwjf/?stkn=MXIxNTIyZGJwdWQweA==" target="_blank" rel="noopener noreferrer">Reel 01<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a><a href="https://www.instagram.com/p/CuynlCXyXoS/?stkn=MTVvcDFpYnJiOXZ5Ng==" target="_blank" rel="noopener noreferrer">Post 02<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a><a href="https://www.instagram.com/p/Cu1TY0KM8IY/?stkn=cG1tbnhqZ2cyNzJy" target="_blank" rel="noopener noreferrer">Post 03<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a><a href="https://www.instagram.com/p/Cu3ocshMW-8/?img_index=5&amp;stkn=N3owdnZuankydXJn" target="_blank" rel="noopener noreferrer">Carousel 04<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a><a href="https://www.instagram.com/p/CvOln36SdT6/?img_index=6&amp;stkn=MTMzdTJxbmtrcjZucg==" target="_blank" rel="noopener noreferrer">Carousel 05<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a><a href="https://www.instagram.com/reel/Cwh5kpMvwSy/?stkn=MXM3a2sybmdvZXR4bQ==" target="_blank" rel="noopener noreferrer">Reel 06<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a><a href="https://www.instagram.com/p/CxHpY72NPjS/?stkn=dmoxbnI4cDhsdnV0" target="_blank" rel="noopener noreferrer">Post 07<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a><a href="https://www.instagram.com/reel/CysVk9wqoc2/?stkn=MWVodGJ3c2lndXdvdg==" target="_blank" rel="noopener noreferrer">Reel 08<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a><a href="https://www.instagram.com/reel/C0opMTXSxer/?stkn=NHo4and2OWMyazBj" target="_blank" rel="noopener noreferrer">Reel 09<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a><a href="https://www.instagram.com/reel/C04MAr9Cf1I/?stkn=MWZ6ZGhyY2gzb283MQ==" target="_blank" rel="noopener noreferrer">Reel 10<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a><a href="https://www.instagram.com/reel/C1ZiWFqMtdD/?stkn=dnVrMGhhNW1hZXNv" target="_blank" rel="noopener noreferrer">Reel 11<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a><a href="https://www.instagram.com/reel/C1Q8s35M2S_/?stkn=MTVqNzBraHl2eGI0Mg==" target="_blank" rel="noopener noreferrer">Reel 12<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a><a href="https://www.instagram.com/reel/C1god_wiA4S/?stkn=MTF0Nmt2ajM5YXJycw==" target="_blank" rel="noopener noreferrer">Reel 13<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a><a href="https://www.instagram.com/reel/C2HyA4ALi2R/?stkn=MXV5c2s5aTBhZjc1YQ==" target="_blank" rel="noopener noreferrer">Reel 14<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a><a href="https://www.instagram.com/p/C2wpfgLCulf/?img_index=2&amp;stkn=MTJsOGI4YzJmYjdycw==" target="_blank" rel="noopener noreferrer">Carousel 15<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a><a href="https://www.instagram.com/p/C3UTmSMiOwq/?stkn=MzFibWNmemhxaXF5" target="_blank" rel="noopener noreferrer">Post 16<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a><a href="https://www.instagram.com/reel/C3uZuhWsgZc/?stkn=dm4xdTJuaHl2Nng2" target="_blank" rel="noopener noreferrer">Reel 17<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a><a href="https://www.instagram.com/reel/C4xukmRuAdk/?stkn=M2sxMTduODdyaTQ1" target="_blank" rel="noopener noreferrer">Reel 18<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a><a href="https://youtu.be/gabIlLll4hU?si=ZDfBhqhC-gjbdGUZ" target="_blank" rel="noopener noreferrer">YouTube film 19<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a></div><p class="ix-where">Where it ran: <a href="https://www.instagram.com/jmfinancialserviceslimited/" target="_blank" rel="noopener noreferrer">Instagram<span class="sr-only"> (opens in a new tab)</span></a>, <a href="https://www.youtube.com/@jmfinancialservicesltd" target="_blank" rel="noopener noreferrer">YouTube<span class="sr-only"> (opens in a new tab)</span></a>, <a href="https://www.linkedin.com/company/jm-financial-services-ltd/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>, <a href="https://www.facebook.com/JMFinancialServicesLimited" target="_blank" rel="noopener noreferrer">Facebook<span class="sr-only"> (opens in a new tab)</span></a>, <a href="https://x.com/JMFSLtd" target="_blank" rel="noopener noreferrer">X (Twitter)<span class="sr-only"> (opens in a new tab)</span></a></p></div></section><section class="ix-room" aria-labelledby="ix-r3"><h2 id="ix-r3"><small>Room 3: LinkedIn for film and TV</small>Vitrina</h2><div><p><strong>The brief:</strong> To create and grow the Vitrina LinkedIn account, positioning them as a leading authority in the world of films, television and entertainment sourcing. To promote their services and explain the Vitrina Business Network in easy-to-understand terms to clients.</p><div class="ix-group">The work</div><div class="ix-links"><a href="https://www.linkedin.com/posts/content-newsletter-ugcPost-7171883257964310528-HErp/?highlightedUpdateUrn=urn%3Ali%3Aactivity%3A7171883473413042176&amp;highlightedUpdateType=SOCIAL_SHARE&amp;origin=SOCIAL_SHARE&amp;utm_source=social_share_send&amp;utm_medium=android_app&amp;rcm=ACoAADMWFmgBRjrjVlODp2EV-PM75u7OoJVyRaE&amp;utm_campaign=whatsapp" target="_blank" rel="noopener noreferrer">Content Newsletter<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a><a href="https://www.linkedin.com/posts/whitepaper-snippet-6-ugcPost-7183417646673977344-WFjO/?highlightedUpdateUrn=urn%3Ali%3Aactivity%3A7183417648091721729&amp;highlightedUpdateType=SOCIAL_SHARE&amp;origin=SOCIAL_SHARE&amp;utm_source=social_share_send&amp;utm_medium=android_app&amp;rcm=ACoAADMWFmgBRjrjVlODp2EV-PM75u7OoJVyRaE&amp;utm_campaign=whatsapp" target="_blank" rel="noopener noreferrer">Whitepaper Snippet #6<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a><a href="https://www.linkedin.com/posts/how-to-get-featured-on-vitrina-ugcPost-7189580568299237377-KN6M/?highlightedUpdateUrn=urn%3Ali%3Aactivity%3A7189669587402047489&amp;highlightedUpdateType=SOCIAL_SHARE&amp;origin=SOCIAL_SHARE&amp;utm_source=social_share_send&amp;utm_medium=android_app&amp;rcm=ACoAADMWFmgBRjrjVlODp2EV-PM75u7OoJVyRaE&amp;utm_campaign=whatsapp" target="_blank" rel="noopener noreferrer">How to get featured on Vitrina<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a><a href="https://www.linkedin.com/posts/opportunity-posts-ugcPost-7190669639033450496-u5QM/?highlightedUpdateUrn=urn%3Ali%3Aactivity%3A7190669639822069760&amp;highlightedUpdateType=SOCIAL_SHARE&amp;origin=SOCIAL_SHARE&amp;utm_source=social_share_send&amp;utm_medium=android_app&amp;rcm=ACoAADMWFmgBRjrjVlODp2EV-PM75u7OoJVyRaE&amp;utm_campaign=whatsapp" target="_blank" rel="noopener noreferrer">Opportunity Posts<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a></div><p class="ix-where">Where it ran: <a href="https://www.linkedin.com/company/vitrina-ai/" target="_blank" rel="noopener noreferrer">Vitrina on LinkedIn<span class="sr-only"> (opens in a new tab)</span></a></p></div></section><section class="ix-room" aria-labelledby="ix-r4"><h2 id="ix-r4"><small>Room 4: Thought leadership</small>Sachin Parikh</h2><div><p><strong>The brief:</strong> To grow Sachin Parikh’s socials, positioning him as a voice of trust and a thought leader in the space of parenting, founding a company, health and wellness.</p><div class="ix-group">The work</div><div class="ix-links"><a href="https://lnkd.in/p/dpGhQeyQ" target="_blank" rel="noopener noreferrer">LinkedIn post 1<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a><a href="https://lnkd.in/p/daxaK7du" target="_blank" rel="noopener noreferrer">LinkedIn post 2<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a><a href="https://lnkd.in/p/dGva4948" target="_blank" rel="noopener noreferrer">LinkedIn post 3<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a><a href="https://www.instagram.com/p/C2uZW-hSf46/?stkn=MTRvYjRhN2ZqZ2dyMg==" target="_blank" rel="noopener noreferrer">Instagram post 1<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a><a href="https://www.instagram.com/p/C1wkWXTyOM7/?stkn=MXhwenFzMGQxY3V1Mg==" target="_blank" rel="noopener noreferrer">Instagram post 2<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a><a href="https://www.instagram.com/reel/C0wUjwysYlK/?stkn=cHFtbGZ3dGNrN2lu" target="_blank" rel="noopener noreferrer">Instagram reel<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a></div><p class="ix-where">Where it ran: <a href="https://www.linkedin.com/in/sachin-parikh-8621389/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a>, <a href="https://www.instagram.com/sachinjparikh?avpt=MWU2NjlhdWl2MjR1Mw==" target="_blank" rel="noopener noreferrer">Instagram<span class="sr-only"> (opens in a new tab)</span></a></p></div></section><section class="ix-room" aria-labelledby="ix-r5"><h2 id="ix-r5"><small>Room 5: Product launches</small>Launches</h2><div><div class="ix-group">The work</div><div class="ix-links"><a href="https://www.samsung.com/my/smartphones/galaxy-s25-ultra/?srsltid=AfmBOooG1080ACzgExU_R0FYRlKVEXdqS7v01gSR_98K9uZ2BcdhTJF3" target="_blank" rel="noopener noreferrer">Samsung Galaxy S25 series<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a><a href="https://www.instagram.com/p/CyPzGG2qDk_/?stkn=MThnMHJicXdwemQ5bQ==" target="_blank" rel="noopener noreferrer">BlinkTrade Pro<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a><a href="https://web.archive.org/web/20240915024225/https://www.footlocker.id/main-since-day-one" target="_blank" rel="noopener noreferrer">Foot Locker: Since Day One<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a></div></div></section><section class="ix-room" aria-labelledby="ix-r6"><h2 id="ix-r6"><small>Room 6: Web &amp; blog copy</small>Content Writing</h2><div><div class="ix-group">The work</div><div class="ix-links"><a href="https://pedigree.com.ph/" target="_blank" rel="noopener noreferrer">Pedigree<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a><a href="https://www.cesar.com.ph/" target="_blank" rel="noopener noreferrer">Cesar<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a><a href="https://www.palmjumeirahmall.ae/en/media/blogs" target="_blank" rel="noopener noreferrer">DHAM: Palm Jumeirah Mall<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a></div></div></section><section class="ix-room" aria-labelledby="ix-r7"><h2 id="ix-r7"><small>Room 7: Paid campaigns</small>Advertising</h2><div><div class="ix-group">The work</div><div class="ix-links"><a href="https://www.facebook.com/ads/library/?active_status=active&amp;ad_type=all&amp;country=IN&amp;is_targeted_country=false&amp;media_type=all&amp;search_type=page&amp;sort_data%5Bmode%5D=total_impressions&amp;sort_data%5Bdirection%5D=desc&amp;view_all_page_id=272910416146030" target="_blank" rel="noopener noreferrer">McCain<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a><a href="https://www.facebook.com/ads/library/?active_status=active&amp;ad_type=all&amp;country=IN&amp;is_targeted_country=false&amp;media_type=all&amp;search_type=page&amp;sort_data%5Bdirection%5D=desc&amp;sort_data%5Bmode%5D=total_impressions&amp;view_all_page_id=110082531452800" target="_blank" rel="noopener noreferrer">Kotak811<svg class="ico" aria-hidden="true"><use href="#i-ext"></use></svg><span class="sr-only"> (opens in a new tab)</span></a></div></div></section></div>
     <div class="ix-foot">
       <button class="primary" id="ix-play">Play the portfolio</button>
     </div>
@@ -426,9 +431,9 @@ const VIT = {
 };
 
 const BRIEF = {
-  jm: "To advertise JM Financial Services' diverse range of products and gain an audience for them on Instagram. I also spearheaded the campaign for the launch of their new app, BlinkTrade Pro, across their social channels.",
+  jm: "To advertise JM Financial Services’ diverse range of products and gain an audience for them on Instagram. I also spearheaded the campaign for the launch of their new app, BlinkTrade Pro, across their social channels.",
   vit: "To create and grow the Vitrina LinkedIn account, positioning them as a leading authority in the world of films, television and entertainment sourcing. To promote their services and explain the Vitrina Business Network in easy-to-understand terms to clients.",
-  sp: "To grow Sachin Parikh's socials, positioning him as a voice of trust and a thought leader in the space of parenting, founding a company, health and wellness."
+  sp: "To grow Sachin Parikh’s socials, positioning him as a voice of trust and a thought leader in the space of parenting, founding a company, health and wellness."
 };
 
 /* rooms: grid position, doors, theme, objects (tile coords on a 20x11 grid) */
@@ -437,7 +442,7 @@ const ROOMS = {
     theme: { floor: ['#2b2342', '#30284a'], wall: '#4d4175', dark: '#241d3d', accent: '#ffd36b' },
     rug: [6, 3, 8, 5],
     objects: [
-      { type: 'lectern', x: 9.5, y: 3, title: 'Who am I?', text: "I'm Hamza Tinwala.\nWords, concepts, scripts and strategies, written for 25+ national & international brands across 5+ industries over 4+ years.\nSpecialized in BFSI writing.\n\nExplore the rooms. Anything that sparkles holds work." },
+      { type: 'lectern', x: 9.5, y: 3, title: 'Who am I?', text: "I’m Hamza Tinwala.\nWords, concepts, scripts and strategies, written for 25+ national & international brands across 5+ industries over 4+ years.\nSpecialized in BFSI writing.\n\nExplore the rooms. Anything that sparkles holds work." },
       { type: 'stat', x: 3, y: 6, label: '4+', title: '4+ years', text: '4+ years of experience.\nLong enough to know that the first idea is rarely the last one.' },
       { type: 'stat', x: 6.5, y: 7.5, label: '25+', title: '25+ brands', text: '25+ national & international brands.\nBanks, brokers, food, pet care, tech, retail and more.' },
       { type: 'stat', x: 12.5, y: 7.5, label: '5+', title: '5+ industries', text: '5+ industries.\nDifferent audiences, different tones, one standard: make it worth remembering.' },
@@ -448,7 +453,7 @@ const ROOMS = {
     theme: { floor: ['#122437', '#152a40'], wall: '#26557a', dark: '#0f273b', accent: '#e8c46a' },
     objects: [
       { type: 'lectern', x: 4, y: 3, title: 'The brief', text: BRIEF.jm },
-      { type: 'chest', x: 13.5, y: 3, w: 2, title: 'Posts & reels archive', text: '19 pieces of work: Instagram posts, carousels, reels and a YouTube film.', links: JM_POSTS },
+      { type: 'chest', x: 13.5, y: 3, w: 2, title: 'Posts & reels archive', text: '19 pieces of work: Instagram posts, carousels, reels and a YouTube film. Instagram may ask you to sign in to view them.', links: JM_POSTS },
       { type: 'totem', icon: 'ig', x: 3, y: 7.5, title: 'Instagram', text: 'JM Financial Services on Instagram.', links: [{ label: '@jmfinancialserviceslimited', url: 'https://www.instagram.com/jmfinancialserviceslimited/', note: 'Instagram' }] },
       { type: 'totem', icon: 'yt', x: 6.5, y: 7.5, title: 'YouTube', text: 'JM Financial Services on YouTube.', links: [{ label: '@jmfinancialservicesltd', url: 'https://www.youtube.com/@jmfinancialservicesltd', note: 'YouTube' }] },
       { type: 'totem', icon: 'li', x: 10, y: 7.5, title: 'LinkedIn', text: 'JM Financial Services on LinkedIn.', links: [{ label: 'JM Financial Services Ltd', url: 'https://www.linkedin.com/company/jm-financial-services-ltd/', note: 'LinkedIn' }] },
@@ -485,7 +490,7 @@ const ROOMS = {
     theme: { floor: ['#131726', '#171c2d'], wall: '#35435f', dark: '#161c2f', accent: '#6ff3ff' },
     objects: [
       { type: 'pedestal', item: 'phone', x: 4, y: 4, title: 'Samsung Galaxy S25 series', text: 'Launch page for the Samsung Galaxy S25 series.', links: [{ label: 'Galaxy S25 Ultra launch page', url: 'https://www.samsung.com/my/smartphones/galaxy-s25-ultra/?srsltid=AfmBOooG1080ACzgExU_R0FYRlKVEXdqS7v01gSR_98K9uZ2BcdhTJF3', note: 'Samsung' }] },
-      { type: 'pedestal', item: 'app', x: 9.5, y: 3, title: 'BlinkTrade Pro', text: 'Launch campaign for JM Financial\'s new trading app, BlinkTrade Pro.', links: [{ label: 'BlinkTrade Pro launch', url: 'https://www.instagram.com/p/CyPzGG2qDk_/?stkn=MThnMHJicXdwemQ5bQ==', note: 'Instagram' }] },
+      { type: 'pedestal', item: 'app', x: 9.5, y: 3, title: 'BlinkTrade Pro', text: 'Launch campaign for JM Financial’s new trading app, BlinkTrade Pro.', links: [{ label: 'BlinkTrade Pro launch', url: 'https://www.instagram.com/p/CyPzGG2qDk_/?stkn=MThnMHJicXdwemQ5bQ==', note: 'Instagram' }] },
       { type: 'pedestal', item: 'shoe', x: 15, y: 4, title: 'Foot Locker: Since Day One', text: 'The "Since Day One" collection launch for Foot Locker.', links: [{ label: 'Since Day One collection', url: 'https://web.archive.org/web/20240915024225/https://www.footlocker.id/main-since-day-one', note: 'Archived page' }] }
     ] },
   r6: { n: 6, name: 'Content Writing', sub: 'Web & blog copy', plaque: 'CONTENT', gx: 0, gy: 1, doors: { e: 'r1', n: 'r5', s: 'r7' },
@@ -504,7 +509,7 @@ const ROOMS = {
     objects: [
       { type: 'billboard', x: 2.5, y: 3, w: 3, h: 2, brand: 'MCCAIN', bg: '#c8102e', fg: '#ffd200', title: 'McCain', text: 'Ads for McCain, live in the Meta Ad Library.', links: [{ label: 'McCain ads', url: 'https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=IN&is_targeted_country=false&media_type=all&search_type=page&sort_data%5Bmode%5D=total_impressions&sort_data%5Bdirection%5D=desc&view_all_page_id=272910416146030', note: 'Ad Library' }] },
       { type: 'billboard', x: 14.5, y: 3, w: 3, h: 2, brand: 'KOTAK 811', bg: '#ed1c24', fg: '#ffffff', title: 'Kotak811', text: 'Ads for Kotak811, live in the Meta Ad Library.', links: [{ label: 'Kotak811 ads', url: 'https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=IN&is_targeted_country=false&media_type=all&search_type=page&sort_data%5Bdirection%5D=desc&sort_data%5Bmode%5D=total_impressions&view_all_page_id=110082531452800', note: 'Ad Library' }] },
-      { type: 'arcade', action: 'end', x: 9, y: 6.5, w: 2, title: 'The End?', text: "You've reached the last room. Thanks for playing.\nEvery brief is a new episode. Let's make the next one worth remembering.", links: [{ label: 'See all work in one list', action: 'index' }, { label: 'Play as another creative', action: 'select' }, { label: 'Watch the opening crawl again', action: 'replay' }] }
+      { type: 'arcade', action: 'end', x: 9, y: 6.5, w: 2, title: 'The End?', text: "You’ve reached the last room. Thanks for playing.\nEvery brief is a new episode. Let’s make the next one worth remembering.", links: [{ label: 'See all work in one list', action: 'index' }, { label: 'Play as another creative', action: 'select' }, { label: 'Watch the opening crawl again', action: 'replay' }] }
     ] }
 };
 const ROOM_ORDER = ['r1', 'r2', 'r3', 'r4', 'r5', 'r6', 'r7'];
@@ -513,7 +518,7 @@ const HEROES = [
   { id: 'gamer', short: 'Gamer', name: 'THE GAMER', up: 'Coordination', dn: 'Stamina', flav: 'Treats every brief like a boss fight. Needs a snack break after the final round.' },
   { id: 'biker', short: 'Biker', name: 'THE BIKER', up: 'Speed', dn: 'Navigation', flav: 'Brief to first draft in record time. Occasionally via the scenic route.' },
   { id: 'reader', short: 'Reader', name: 'THE READER', up: 'Creativity', dn: 'Time management', flav: 'Has read the brief, the brand book and three novels. Deadline? Which deadline?' },
-  { id: 'movie', short: 'Movie goer', name: 'THE MOVIE GOER', up: 'Observation', dn: 'Vision', flav: 'Notices every frame and every detail. Just don\'t ask him to see without the glasses.' },
+  { id: 'movie', short: 'Movie goer', name: 'THE MOVIE GOER', up: 'Observation', dn: 'Vision', flav: 'Notices every frame and every detail. Just don’t ask him to see without the glasses.' },
   { id: 'online', short: 'Chronically online', name: 'THE CHRONICALLY ONLINE', up: 'Awareness', dn: 'Attention span', flav: 'Knows the trend before it trends. Wait, what were we talking about?' }
 ];
 
@@ -583,14 +588,15 @@ function line(c, x0, y0, x1, y1, col) {
   for (;;) { c.fillRect(x0, y0, 1, 1); if (x0 === x1 && y0 === y1) break; const e2 = 2 * e; if (e2 >= dy) { e += dy; x0 += sx; } if (e2 <= dx) { e += dx; y0 += sy; } }
 }
 const FONT = {
-  A: '010101111101101', B: '110101110101110', C: '011100100100011', D: '110101101101110', E: '111100110100111', F: '111100110100100', G: '011100101101011', H: '101101111101101', I: '111010010010111', J: '001001001101010', K: '101101110101101', L: '100100100100111', M: '101111111101101', N: '110101101101101', O: '010101101101010', P: '110101110100100', Q: '010101101110011', R: '110101110101101', S: '011100010001110', T: '111010010010010', U: '101101101101111', V: '101101101101010', W: '101101111111101', X: '101101010101101', Y: '101101010010010', Z: '111001010100111',
+  A: '010101111101101', B: '110101110101110', C: '011100100100011', D: '110101101101110', E: '111100110100111', F: '111100110100100', G: '011100101101011', H: '101101111101101', I: '111010010010111', J: '001001001101010', K: '101101110101101', L: '100100100100111', M: '1000111011101011000110001', N: '110101101101101', O: '010101101101010', P: '110101110100100', Q: '010101101110011', R: '110101110101101', S: '011100010001110', T: '111010010010010', U: '101101101101111', V: '101101101101010', W: '1000110001101011101110001', X: '101101010101101', Y: '101101010010010', Z: '111001010100111',
   0: '111101101101111', 1: '010110010010111', 2: '110001010100111', 3: '110001010001110', 4: '101101111001001', 5: '111100110001110', 6: '011100111101111', 7: '111001010010010', 8: '111101111101111', 9: '111101111001110',
   '+': '000010111010000', '?': '110001010000010', '!': '010010010000010', '.': '000000000000010', '-': '000000111000000', ' ': '000000000000000', "'": '010010000000000'
 };
-const textW = s => s.length * 4 - 1;
+const gw = ch => ((FONT[ch] || FONT[' ']).length / 5);
+const textW = s => [...s.toUpperCase()].reduce((a, ch) => a + gw(ch) + 1, 0) - 1;
 function ptext(c, s, x, y, col) {
   c.fillStyle = col; x = Math.round(x); y = Math.round(y);
-  for (const ch of s.toUpperCase()) { const g = FONT[ch] || FONT[' ']; for (let i = 0; i < 15; i++) if (g[i] === '1') c.fillRect(x + (i % 3), y + ((i / 3) | 0), 1, 1); x += 4; }
+  for (const ch of s.toUpperCase()) { const g = FONT[ch] || FONT[' '], w = g.length / 5; for (let i = 0; i < g.length; i++) if (g[i] === '1') c.fillRect(x + (i % w), y + ((i / w) | 0), 1, 1); x += w + 1; }
 }
 const hash = (a, b, s) => { let h = (a * 374761393 + b * 668265263 + s * 2147483647) | 0; h = (h ^ (h >>> 13)) * 1274126177; return ((h ^ (h >>> 16)) >>> 0) / 4294967296; };
 
@@ -712,14 +718,14 @@ function startIntro() {
   later(() => { $('#preline').style.opacity = 1; }, 900 * T);
   later(() => { $('#preline').style.opacity = 0; }, 5200 * T);
   later(() => { $('#logo').classList.add('go'); Snd.boom(); }, 7000 * T);
-  later(runCrawl, 8600 * T);
+  later(runCrawl, 10400 * T);
   setTimeout(() => $('#skip').focus({ preventScroll: true }), 50);
 }
 function runCrawl() {
   const text = $('#crawl-text'), plane = $('#crawl-plane');
   const H = plane.clientHeight; text.classList.add('running');
   let y = H * .95; const end = -H * .05;
-  const dur = 50; const speed = (y - end) / dur;
+  const dur = 42; const speed = (y - end) / dur;
   let last = performance.now();
   const f = now => {
     const dt = Math.min(.05, (now - last) / 1000); last = now; y -= speed * dt;
@@ -823,7 +829,7 @@ function renderBg(r) {
     R(c, px, py + 15, 16, 1, '#00000022'); R(c, px + 15, py, 1, 16, '#00000018');
     if (hash(x, y, s + 9) < .06) { line(c, px + 3, py + 4, px + 8, py + 9, '#00000040'); line(c, px + 8, py + 9, px + 7, py + 13, '#00000040'); }
   }
-  if (r.rug) { const [x, y, w, h] = r.rug.map(v => v * TS); R(c, x, y, w, h, th.dark); R(c, x + 3, y + 3, w - 6, h - 6, th.accent + '55'); R(c, x + 6, y + 6, w - 12, h - 12, th.dark); for (let i = x + 10; i < x + w - 10; i += 8) R(c, i, y + h / 2 - 1, 4, 2, th.accent + '66'); }
+  if (r.rug) { const [x, y, w, h] = r.rug.map(v => v * TS); R(c, x, y, w, h, th.dark); R(c, x + 2, y + 2, w - 4, h - 4, th.accent + '40'); R(c, x + 4, y + 4, w - 8, h - 8, th.dark); for (let j = y + 8; j < y + h - 6; j += 6) for (let i = x + 8 + ((j / 6) % 2) * 3; i < x + w - 8; i += 6) R(c, i, j, 2, 2, th.accent + '30'); }
   for (let y = 0; y < ROWS; y++) for (let x = 0; x < COLS; x++) {
     if (!r.grid[y][x]) continue; const px = x * TS, py = y * TS;
     if (y === 0) {
@@ -958,17 +964,25 @@ function drawMinimap() {
   }
 }
 
+$('#minimap').addEventListener('click', e => {
+  if (!G.running || G.dlg || G.trans) return;
+  const rc = e.currentTarget.getBoundingClientRect(), gx = Math.floor((e.clientX - rc.left) / rc.width * 3), gy = Math.floor((e.clientY - rc.top) / rc.height * 3);
+  const id = ROOM_ORDER.find(k => ROOMS[k].gx === gx && ROOMS[k].gy === gy);
+  if (id && G.visited.has(id) && id !== G.room.id) { G.p = { ...G.p, x: 160, y: 120, dir: 'd' }; Snd.door(); enterRoom(id); }
+  else if (id && !G.visited.has(id)) toast('Find that room on foot first');
+});
 function startGame() {
   if (!G.built) { buildRooms(); G.built = true; }
   const g = $('#game'); g.classList.remove('hidden');
   const hc = $('#hud-hero').getContext('2d'); hc.clearRect(0, 0, 32, 30); drawHero(hc, hero.id, 16, 26, { t: 0, dir: hero.id === 'biker' ? 'r' : 'd', fx: 1 });
   $('#hud-class').textContent = hero.short.toUpperCase();
-  G.speed = hero.id === 'biker' ? 92 : 66; G.reach = hero.id === 'movie' ? 20 : 13;
+  G.speed = hero.id === 'biker' ? 124 : 92; G.reach = hero.id === 'movie' ? 26 : 20;
   G.p = { x: 160, y: 150, dir: 'u', fx: 1, moving: false };
   G.visited = new Set(); G.parts = []; G.trans = null; closeDlg(true); enterRoom('r1');
   if (isTouch) { $('#pad').classList.remove('hidden'); $('#abtn').classList.remove('hidden'); }
   fit(); G.running = true;
-  setTimeout(() => { if (!G.dlg) openDlg({ title: 'WELCOME TO MY PORTFOLIO', tag: 'Room 1', text: `Welcome, ${hero.short.toLowerCase()}.\nSeven rooms. One portfolio. ${isTouch ? 'Use the pad to walk and tap A' : 'Walk with the arrow keys and press E'} beside anything that sparkles to open the work. Glowing arrows mark doors to rooms you haven't found yet.\n\nStart with the lectern: who am I?`, welcome: true }); }, reduced ? 300 : 1100);
+  if (isTouch && innerHeight > innerWidth) setTimeout(() => toast('Turn your phone sideways for a bigger view'), reduced ? 400 : 1400);
+  setTimeout(() => { if (!G.dlg) openDlg({ title: 'WELCOME TO MY PORTFOLIO', tag: 'Room 1', text: `Welcome, ${hero.short.toLowerCase()}.\nSeven rooms. One portfolio. ${isTouch ? 'Use the pad to walk and tap A' : 'Walk with the arrow keys and press E'} beside anything that sparkles to open the work. Glowing arrows mark doors to rooms you haven’t found yet.\n\nStart with the lectern: who am I?`, welcome: true }); }, reduced ? 300 : 1100);
 }
 
 function fit() {
@@ -995,6 +1009,7 @@ function finishText() {
   const d = G.dlg; if (!d) return; d.shown = d.full.length; d.done = true; $('#dlg-text').textContent = d.full;
   const L = d.o.links || [];
   const links = L.concat(d.o.action === 'end' ? contactLinks() : []);
+  $('#dlg').classList.toggle('many', links.length > 3);
   $('#dlg-links').innerHTML = links.map(l => l.url ? linkHTML(l) : `<button type="button" data-act="${l.action}"><span class="lbl">${esc(l.label)}</span></button>`).join('');
   $('#dlg-links').querySelectorAll('a').forEach(a => a.addEventListener('click', () => { Snd.confirm(); d.o.seen = true; markOpened(a); }));
   $('#dlg-links').querySelectorAll('button').forEach(b => b.addEventListener('click', () => doAction(b.dataset.act)));
@@ -1024,14 +1039,14 @@ function closeDlg(silent) {
   if (!G.dlg && !silent) return;
   if (G.dlg && G.dlg.o && !G.dlg.o.welcome && G.dlg.o.type) G.dlg.o.seen = true;
   G.dlg = null; $('#dlg').classList.add('hidden'); if (!silent) Snd.close(); G.keys = {}; if (isTouch && G.running) { $('#pad').classList.remove('hidden'); $('#abtn').classList.remove('hidden'); }
-  if (document.activeElement && $('#dlg').contains(document.activeElement)) document.activeElement.blur();
+  if (document.activeElement && $('#dlg').contains(document.activeElement)) cv.focus({ preventScroll: true });
 }
 function advanceDlg() { const d = G.dlg; if (!d) return; if (!d.done) finishText(); else closeDlg(); }
 function doAction(a) {
   closeDlg(true);
   if (a === 'index') openIndex();
   if (a === 'select') { G.running = false; $('#game').classList.add('hidden'); hidePad(); showSelect(); }
-  if (a === 'replay') { location.hash = ''; location.reload(); }
+  if (a === 'replay') { try { sessionStorage.setItem('ht-replay', '1'); } catch (e) {} location.hash = ''; location.reload(); }
 }
 function hidePad() { $('#pad').classList.add('hidden'); $('#abtn').classList.add('hidden'); }
 
@@ -1059,7 +1074,7 @@ addEventListener('keydown', e => {
       if (['ArrowDown', 'ArrowRight', 'KeyS', 'KeyD'].includes(e.code)) { e.preventDefault(); (links[i + 1] || links[0]).focus(); Snd.move(); return; }
       if (['ArrowUp', 'ArrowLeft', 'KeyW', 'KeyA'].includes(e.code)) { e.preventDefault(); (links[i - 1] || links[links.length - 1]).focus(); Snd.move(); return; }
       if (e.key === 'Enter') return;
-      if (e.code === 'KeyE') { e.preventDefault(); closeDlg(); return; }
+      if ((e.code === 'KeyE' || e.key === ' ') && i >= 0) { e.preventDefault(); links[i].click(); return; }
       return;
     }
     if (e.code === 'KeyE' || e.key === ' ' || e.key === 'Enter') { e.preventDefault(); advanceDlg(); }
@@ -1101,7 +1116,7 @@ function update(dt) {
     if (G.trans.t >= 1) { G.trans = null; }
     return;
   }
-  if (G.dlg) { const d = G.dlg; if (!d.done) { const prev = Math.floor(d.shown); d.shown += dt * (reduced ? 400 : 55); const n = Math.floor(d.shown); if (n !== prev && n % 2 === 0) Snd.blip(); if (d.shown >= d.full.length) finishText(); else $('#dlg-text').textContent = d.full.slice(0, n); } p.moving = false; return; }
+  if (G.dlg) { const d = G.dlg; if (!d.done) { const prev = Math.floor(d.shown); d.shown += dt * (reduced ? 400 : 55); const n = Math.floor(d.shown); if (n !== prev && n % 4 === 0 && d.full.length < 160) Snd.blip(); if (d.shown >= d.full.length) finishText(); else $('#dlg-text').textContent = d.full.slice(0, n); } p.moving = false; return; }
   let dx = (G.keys.right ? 1 : 0) - (G.keys.left ? 1 : 0), dy = (G.keys.down ? 1 : 0) - (G.keys.up ? 1 : 0);
   if (dx && dy) { dx *= .7071; dy *= .7071; }
   p.moving = !!(dx || dy);
@@ -1211,8 +1226,8 @@ function buildIndex() {
     const groups = r.objects.filter(o => o.links && o.links.some(l => l.url));
     let body = brief ? `<p><strong>The brief:</strong> ${esc(brief.text)}</p>` : '';
     const totems = groups.filter(o => o.type === 'totem'), rest = groups.filter(o => o.type !== 'totem');
-    if (totems.length) body += `<div class="ix-group">Channels</div><div class="ix-links">${totems.map(o => ixLink({ url: o.links[0].url, label: o.title })).join('')}</div>`;
-    if (rest.length) body += `<div class="ix-group">Work</div><div class="ix-links">${rest.flatMap(o => o.links.filter(l => l.url).map(l => ixLink(o.links.length > 1 ? l : { url: l.url, label: o.title }))).join('')}</div>`;
+    if (rest.length) body += `<div class="ix-group">The work</div><div class="ix-links">${rest.flatMap(o => o.links.filter(l => l.url).map(l => ixLink(o.links.length > 1 ? l : { url: l.url, label: o.title }))).join('')}</div>`;
+    if (totems.length) body += `<p class="ix-where">Where it ran: ${totems.map(o => `<a href="${esc(o.links[0].url)}" target="_blank" rel="noopener noreferrer">${esc(o.title)}<span class="sr-only"> (opens in a new tab)</span></a>`).join(', ')}</p>`;
     return `<section class="ix-room" aria-labelledby="ix-${id}"><h2 id="ix-${id}"><small>Room ${r.n}: ${esc(r.sub)}</small>${esc(r.name)}</h2><div>${body}</div></section>`;
   }).join('');
 }
@@ -1248,6 +1263,7 @@ try {
   if (localStorage.getItem('ht-sound') === '0') setSound(false);
 } catch (e) {}
 if (location.hash === '#work') openIndex();
+try { if (sessionStorage.getItem('ht-replay')) { sessionStorage.removeItem('ht-replay'); startIntro(); } } catch (e) {}
 if ($('#index').classList.contains('hidden')) $('#start').focus({ preventScroll: true });
 if (location.search.includes('dev')) window.__dev = { G, enterRoom, ROOMS, openDlg, setHero: i => { hero = HEROES[i]; } };
 }
